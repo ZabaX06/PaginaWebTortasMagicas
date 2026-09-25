@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tortas Mágicas | Elegancia y Sabor</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind Configuration & Custom CSS -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#CBA135',
+                            goldHover: '#B58F2F',
+                            dark: '#1E293B',
+                            cream: '#FDFBF7',
+                            lightGray: '#F9F6F0'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Base styles to ensure formal aesthetics */
+        body {
+            color: #334155; /* slate-700 for softer, elegant text */
+        }
+        .text-gold { color: #CBA135; }
+        .bg-gold { background-color: #CBA135; }
+        .border-gold { border-color: #CBA135; }
+    </style>
+</head>
+<body class="bg-white antialiased selection:bg-brand-gold selection:text-white">
+
+    <!-- 1. Encabezado fijo -->
+    <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer">
+                    <img src="media/logo.png" alt="Logo Tortas Mágicas" class="h-16 w-auto object-contain">
+                </div>
+                
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-10">
+                    <a href="#inicio" class="text-gray-600 hover:text-brand-gold transition duration-300 text-sm font-medium uppercase tracking-wider">Inicio</a>
+                    <a href="#catalogo" class="text-gray-600 hover:text-brand-gold transition duration-300 text-sm font-medium uppercase tracking-wider">Catálogo</a>
+                    <a href="#nosotros" class="text-gray-600 hover:text-brand-gold transition duration-300 text-sm font-medium uppercase tracking-wider">Sobre Nosotros</a>
+                    <a href="#contacto" class="text-gray-600 hover:text-brand-gold transition duration-300 text-sm font-medium uppercase tracking-wider">Contacto</a>
+                </nav>
+                
+                <!-- CTA Button -->
+                <div class="hidden md:flex items-center">
+                    <a href="#catalogo" class="bg-brand-gold hover:bg-brand-goldHover text-white px-6 py-2.5 rounded text-sm font-medium transition duration-300 shadow-md">
+                        Hacer un Pedido
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Sección Hero principal -->
+    <section id="inicio" class="pt-32 pb-20 bg-brand-cream relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="max-w-2xl">
+                    <h1 class="font-serif text-5xl md:text-6xl font-bold text-brand-dark leading-tight mb-6">
+                        Elegancia y sabor en cada detalle.
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8 font-light leading-relaxed">
+                        Pastelería artesanal y diseños exclusivos para que tus celebraciones sean verdaderamente mágicas. Ingredientes de primera calidad y una dedicación absoluta a la perfección.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#catalogo" class="text-center bg-brand-dark hover:bg-gray-800 text-white px-8 py-3.5 rounded text-sm font-medium uppercase tracking-wider transition duration-300 shadow-lg">
+                            Explorar Catálogo
+                        </a>
+                        <a href="#contacto" class="text-center border-2 border-brand-dark text-brand-dark hover:bg-brand-dark hover:text-white px-8 py-3.5 rounded text-sm font-medium uppercase tracking-wider transition duration-300">
+                            Cotizar Personalizada
+                        </a>
+                    </div>
+                </div>
+                <!-- Image Placeholder -->
+                <div class="flex justify-center lg:justify-end">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-brand-gold rounded-t-full opacity-10 transform translate-x-4 translate-y-4"></div>
+                        <img src="https://placehold.co/500x600/E8E3D9/475569?font=playfair-display&text=Torta+Elegante" alt="Torta elegante representativa" class="relative rounded-t-full rounded-b-md shadow-2xl object-cover w-[350px] md:w-[400px] h-[450px] md:h-[500px]">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Catálogo de Especialidades -->
+    <section id="catalogo" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl font-bold text-brand-dark mb-4">Catálogo de Especialidades</h2>
+                <div class="w-24 h-1 bg-brand-gold mx-auto mb-4"></div>
+                <p class="text-gray-500 font-light">Una selección de nuestras creaciones más solicitadas.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Producto 1 -->
+                <div class="group bg-white rounded-lg overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="media/torta_boda.jpg" alt="Torta de Bodas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="font-serif text-xl font-bold text-brand-dark mb-2">Torta "De Bodas"</h3>
+                        <p class="text-sm text-gray-500 mb-4 flex-grow">Bizcocho de vainilla francesa con relleno de crema de frambuesa y cobertura de fondant.</p>
+                        <div class="flex justify-between items-center mt-auto">
+                            <span class="text-lg font-semibold text-brand-dark">$180,000 COP</span>
+                        </div>
+                        <button class="mt-4 w-full bg-brand-lightGray hover:bg-brand-gold hover:text-white text-brand-dark border border-gray-200 hover:border-transparent py-2.5 rounded text-sm font-medium transition duration-300">
+                            Añadir al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Producto 2: Brazo de Reina -->
+                <div class="group bg-white rounded-lg overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="media/brazo_reina.jpg" alt="Brazo de Reina" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="font-serif text-xl font-bold text-brand-dark mb-2">Brazo de Reina</h3>
+                        <p class="text-sm text-gray-500 mb-4 flex-grow">El clásico esponjoso relleno de abundante manjar blanco espolvoreado con azúcar glas y frutos secos.</p>
+                        <div class="flex justify-between items-center mt-auto">
+                            <span class="text-lg font-semibold text-brand-dark">$45,000 COP</span>
+                        </div>
+                        <button class="mt-4 w-full bg-brand-lightGray hover:bg-brand-gold hover:text-white text-brand-dark border border-gray-200 hover:border-transparent py-2.5 rounded text-sm font-medium transition duration-300">
+                            Añadir al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Producto 3: Leche Asada -->
+                <div class="group bg-white rounded-lg overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="media/leche_asada.jpg" alt="Leche Asada" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="font-serif text-xl font-bold text-brand-dark mb-2">Leche Asada Tradicional</h3>
+                        <p class="text-sm text-gray-500 mb-4 flex-grow">Postre horneado de textura suave con una capa perfecta de caramelo artesanal. Ideal para la familia.</p>
+                        <div class="flex justify-between items-center mt-auto">
+                            <span class="text-lg font-semibold text-brand-dark">$35,000 COP</span>
+                        </div>
+                        <button class="mt-4 w-full bg-brand-lightGray hover:bg-brand-gold hover:text-white text-brand-dark border border-gray-200 hover:border-transparent py-2.5 rounded text-sm font-medium transition duration-300">
+                            Añadir al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Producto 4 -->
+                <div class="group bg-white rounded-lg overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="media/torta_frutal.jpg" alt="Torta Trufa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="font-serif text-xl font-bold text-brand-dark mb-2">Torta "Trufa Real"</h3>
+                        <p class="text-sm text-gray-500 mb-4 flex-grow">Intenso cacao al 70%, bizcocho húmedo de chocolate y ganache brillante. Decorada con láminas de oro.</p>
+                        <div class="flex justify-between items-center mt-auto">
+                            <span class="text-lg font-semibold text-brand-dark">$85,000 COP</span>
+                        </div>
+                        <button class="mt-4 w-full bg-brand-lightGray hover:bg-brand-gold hover:text-white text-brand-dark border border-gray-200 hover:border-transparent py-2.5 rounded text-sm font-medium transition duration-300">
+                            Añadir al Carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Cómo Hacer un Pedido -->
+    <section class="py-20 bg-brand-lightGray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl font-bold text-brand-dark mb-4">Cómo Hacer un Pedido</h2>
+                <div class="w-24 h-1 bg-brand-gold mx-auto mb-4"></div>
+                <p class="text-gray-500 font-light">Un proceso simple y elegante para asegurar su satisfacción.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+                <!-- Linea conectora (solo desktop) -->
+                <div class="hidden md:block absolute top-10 left-[16%] right-[16%] h-0.5 bg-gray-200 z-0"></div>
+                
+                <!-- Paso 1 -->
+                <div class="relative z-10 flex flex-col items-center text-center">
+                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-md border border-gray-100 mb-6">
+                        <svg class="w-8 h-8 text-brand-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-brand-dark mb-3">1. Seleccione su Postre</h3>
+                    <p class="text-gray-600 text-sm font-light px-4">Explore nuestro catálogo en línea y elija el sabor o diseño que mejor acompañe su celebración.</p>
+                </div>
+                
+                <!-- Paso 2 -->
+                <div class="relative z-10 flex flex-col items-center text-center">
+                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-md border border-gray-100 mb-6">
+                        <svg class="w-8 h-8 text-brand-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-brand-dark mb-3">2. Personalice los Detalles</h3>
+                    <p class="text-gray-600 text-sm font-light px-4">Defina el número de porciones, mensaje decorativo y agende la fecha exacta de su evento.</p>
+                </div>
+                
+                <!-- Paso 3 -->
+                <div class="relative z-10 flex flex-col items-center text-center">
+                    <div class="w-20 h-20 bg-brand-gold rounded-full flex items-center justify-center shadow-md mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-brand-dark mb-3">3. Disfrute la Magia</h3>
+                    <p class="text-gray-600 text-sm font-light px-4">Reciba su orden con puntualidad, fresca y perfectamente empaquetada lista para impresionar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Testimonios de Clientes -->
+    <section class="py-24 bg-white border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl font-bold text-brand-dark mb-4">La Experiencia de Nuestros Clientes</h2>
+                <div class="w-24 h-1 bg-brand-gold mx-auto mb-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonio 1 -->
+                <div class="p-8 border border-gray-100 rounded-sm bg-brand-cream relative">
+                    <svg class="w-10 h-10 text-brand-gold/20 absolute top-4 left-4" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                    <p class="text-gray-600 text-sm font-light italic leading-relaxed mb-6 relative z-10 pt-4">
+                        "Encargué la torta para mi boda y el resultado fue majestuoso. No solo la presentación era impecable y elegante, sino que el sabor del bizcocho dejó a todos los invitados encantados. Absolutamente recomendados."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-serif font-bold mr-3">EC</div>
+                        <div>
+                            <h4 class="font-bold text-brand-dark text-sm">Elena Castañeda</h4>
+                            <p class="text-xs text-gray-500">Clienta de Boda</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonio 2 -->
+                <div class="p-8 border border-gray-100 rounded-sm bg-brand-cream relative">
+                    <svg class="w-10 h-10 text-brand-gold/20 absolute top-4 left-4" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                    <p class="text-gray-600 text-sm font-light italic leading-relaxed mb-6 relative z-10 pt-4">
+                        "La sobriedad y profesionalismo con la que manejan cada pedido es de destacar. Pedimos una mesa de postres corporativa y la leche asada fue el punto más alto del evento. Presentación de primera."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-serif font-bold mr-3">MR</div>
+                        <div>
+                            <h4 class="font-bold text-brand-dark text-sm">Mauricio Ríos</h4>
+                            <p class="text-xs text-gray-500">Evento Corporativo</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonio 3 -->
+                <div class="p-8 border border-gray-100 rounded-sm bg-brand-cream relative">
+                    <svg class="w-10 h-10 text-brand-gold/20 absolute top-4 left-4" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                    <p class="text-gray-600 text-sm font-light italic leading-relaxed mb-6 relative z-10 pt-4">
+                        "Comprar aquí el brazo de reina para los aniversarios de mis padres ya es una tradición familiar. Mantienen intacta la calidad, frescura y ese toque formal que los caracteriza en cada entrega."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-serif font-bold mr-3">VG</div>
+                        <div>
+                            <h4 class="font-bold text-brand-dark text-sm">Valeria Gómez</h4>
+                            <p class="text-xs text-gray-500">Clienta Habitual</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Galería de Instagram -->
+    <section class="py-20 bg-brand-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 flex flex-col items-center">
+                <svg class="w-8 h-8 text-brand-dark mb-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                <h2 class="font-serif text-3xl font-bold text-brand-dark mb-2">Síganos en Instagram</h2>
+                <a href="https://www.instagram.com/tortas_magicas07?stkn=cTUyMjgzcGFlMTJh" class="text-sm text-brand-gold hover:text-brand-goldHover transition">@tortasmagicas_oficial</a>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <a href="#" class="block group relative overflow-hidden aspect-square">
+                    <img src="https://placehold.co/300x300/E8E3D9/475569?text=Gallery+1" alt="Instagram 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/></svg>
+                    </div>
+                </a>
+                <a href="#" class="block group relative overflow-hidden aspect-square">
+                    <img src="https://placehold.co/300x300/F3F4F6/475569?text=Gallery+2" alt="Instagram 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/></svg>
+                    </div>
+                </a>
+                <a href="#" class="block group relative overflow-hidden aspect-square">
+                    <img src="https://placehold.co/300x300/E8E3D9/475569?text=Gallery+3" alt="Instagram 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/></svg>
+                    </div>
+                </a>
+                <a href="#" class="block group relative overflow-hidden aspect-square">
+                    <img src="https://placehold.co/300x300/F3F4F6/475569?text=Gallery+4" alt="Instagram 4" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/></svg>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Footer oscuro y formal -->
+    <footer id="contacto" class="bg-[#111827] text-gray-300 py-16 border-t-4 border-brand-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <!-- Columna 1: Info -->
+                <div>
+                    <div class="flex items-center mb-6">
+                        <svg class="w-8 h-8 mr-2 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 15a2 2 0 01-2 2H5a2 2 0 01-2-2m18 0l-1.5-7.5a2 2 0 00-2-1.5H8.5a2 2 0 00-2 1.5L5 15m16 0H5m4-5v2m4-2v2m4-2v2M9 5h6m-3-3v3"></path></svg>
+                        <span class="font-serif text-2xl font-bold text-white tracking-wide">Tortas Mágicas</span>
+                    </div>
+                    <p class="text-sm text-gray-400 leading-relaxed font-light">
+                        Elevando el arte de la pastelería. Diseños exclusivos y sabores inolvidables para hacer de sus momentos especiales un recuerdo verdaderamente mágico.
+                    </p>
+                </div>
+
+                <!-- Columna 2: Contacto -->
+                <div>
+                    <h4 class="font-serif text-lg font-bold text-white mb-6 uppercase tracking-wider text-sm">Contacto</h4>
+                    <ul class="space-y-4 text-sm font-light">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 mr-3 text-brand-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            <span>Av. Principal 123, Barrio Elegante,<br>Ciudad, País.</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-3 text-brand-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            <span>+57 (300) 123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-3 text-brand-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            <span>contacto@tortasmagicas.com</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Horarios -->
+                <div>
+                    <h4 class="font-serif text-lg font-bold text-white mb-6 uppercase tracking-wider text-sm">Horarios de Atención</h4>
+                    <ul class="space-y-2 text-sm font-light text-gray-400">
+                        <li class="flex justify-between border-b border-gray-800 pb-2">
+                            <span>Lunes - Viernes:</span>
+                            <span>9:00 AM - 7:00 PM</span>
+                        </li>
+                        <li class="flex justify-between border-b border-gray-800 pb-2 pt-2">
+                            <span>Sábados:</span>
+                            <span>10:00 AM - 5:00 PM</span>
+                        </li>
+                        <li class="flex justify-between pt-2">
+                            <span>Domingos:</span>
+                            <span>Solo entregas agendadas</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Columna 4: Redes -->
+                <div>
+                    <h4 class="font-serif text-lg font-bold text-white mb-6 uppercase tracking-wider text-sm">Síganos</h4>
+                    <p class="text-sm text-gray-400 font-light mb-4">Manténgase al tanto de nuestras últimas creaciones de alta repostería.</p>
+                    <div class="flex space-x-4">
+                        <!-- Facebook -->
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-gold transition duration-300">
+                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/tortas_magicas07?stkn=cTUyMjgzcGFlMTJh" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-gold transition duration-300">
+                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-xs text-gray-500">&copy; 2024 Tortas Mágicas. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 8. Botón flotante de WhatsApp -->
+    <a href="https://wa.me/573106654139" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] hover:bg-[#1ebe57] text-white p-4 rounded-full shadow-2xl z-50 transition-transform duration-300 hover:scale-110 flex items-center justify-center">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+    </a>
+
+</body>
+</html>
