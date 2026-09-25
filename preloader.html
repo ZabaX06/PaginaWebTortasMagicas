@@ -1,0 +1,318 @@
+<!DOCTYPE1 html>
+<html lang="es">
+<head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tortas Mágicas | Elegancia y Sabor</title>
+
+  <!-- Fuentes Elegantes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ===================================================
+       1. ESTILOS DEL PRELOADER (PANTALLA DE CARGA)
+       =================================================== */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #FAF8F5; /* Color crema elegante de fondo */
+      z-index: 99999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Ocultar preloader cuando finalice */
+    #preloader.preloader-hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    /* Contenedor del pastel y elementos */
+    .loader-box {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 380px;
+      padding: 20px;
+    }
+
+    /* SVG del Pastel */
+    .cake-svg {
+      width: 140px;
+      height: 160px;
+      margin-bottom: 20px;
+      overflow: visible;
+    }
+
+    /* Animaciones de armado del pastel */
+    .plate {
+      transform-origin: center;
+      animation: popIn 0.5s ease-out forwards;
+    }
+
+    .tier-1 {
+      transform-origin: bottom center;
+      animation: dropTier 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s forwards;
+      opacity: 0;
+    }
+
+    .tier-2 {
+      transform-origin: bottom center;
+      animation: dropTier 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.8s forwards;
+      opacity: 0;
+    }
+
+    .tier-3 {
+      transform-origin: bottom center;
+      animation: dropTier 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.3s forwards;
+      opacity: 0;
+    }
+
+    .candle {
+      transform-origin: bottom center;
+      animation: dropTier 0.5s ease-out 1.8s forwards;
+      opacity: 0;
+    }
+
+    /* Llama de la vela animada */
+    .flame {
+      transform-origin: center bottom;
+      animation: flameFlicker 1.2s ease-in-out infinite alternate 2.2s, fadeIn 0.3s forwards 2.1s;
+      opacity: 0;
+    }
+
+    /* Destellos mágicos */
+    .sparkle {
+      animation: sparkleAnim 1.5s ease-in-out infinite alternate;
+      transform-origin: center;
+    }
+    .sparkle-1 { animation-delay: 2.3s; }
+    .sparkle-2 { animation-delay: 2.6s; }
+
+    @keyframes dropTier {
+      0% {
+        opacity: 0;
+        transform: translateY(-30px) scaleY(0.7);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scaleY(1);
+      }
+    }
+
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0.5); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes flameFlicker {
+      0% { transform: scale(1) rotate(-3deg); }
+      50% { transform: scale(1.15) rotate(3deg); }
+      100% { transform: scale(0.95) rotate(-2deg); }
+    }
+
+    @keyframes sparkleAnim {
+      0% { opacity: 0.2; transform: scale(0.7); }
+      100% { opacity: 1; transform: scale(1.3); }
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    /* Texto y Marca */
+    .loader-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #2D2522;
+      margin: 0 0 6px 0;
+      letter-spacing: 0.5px;
+    }
+
+    .loader-status {
+      font-size: 13px;
+      color: #8C7B70;
+      margin-bottom: 20px;
+      min-height: 20px;
+      font-weight: 300;
+    }
+
+    /* Barra de Progreso */
+    .progress-bar-container {
+      width: 220px;
+      height: 6px;
+      background-color: #EFE9E2;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .progress-bar {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, #D4AF37, #C59B27); /* Tono dorado */
+      border-radius: 10px;
+      transition: width 0.2s ease-out;
+    }
+
+    .progress-number {
+      font-size: 12px;
+      font-weight: 600;
+      color: #C59B27;
+      letter-spacing: 1px;
+    }
+
+
+    /* ===================================================
+       2. ESTILOS DE LA PÁGINA PRINCIPAL (EJEMPLO)
+       =================================================== */
+    body {
+       
+        }
+  </style>
+</head>
+<body>
+
+  <!-- ===================================================
+       ANIMACIÓN PRELOADER DE PASTEL
+       =================================================== -->
+  <div id="preloader">
+    <div class="loader-box">
+      
+      <!-- Ilustración Vectorial SVG del Pastel Animado -->
+      <svg class="cake-svg" viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Plato/Base -->
+        <ellipse class="plate" cx="100" cy="195" rx="85" ry="12" fill="#E2D7CB"/>
+        <ellipse class="plate" cx="100" cy="192" rx="78" ry="10" fill="#FAF8F5"/>
+        
+        <!-- Piso Base (Piso 1) -->
+        <g class="tier-1">
+          <path d="M35 145 C35 145 35 185 35 185 C35 190 64 194 100 194 C136 194 165 190 165 185 C165 185 165 145 165 145 Z" fill="#F4EADF"/>
+          <!-- Crema / Cobertura Piso 1 -->
+          <path d="M35 145 Q45 155 55 145 Q65 158 75 145 Q85 155 95 145 Q105 158 115 145 Q125 155 135 145 Q145 158 155 145 Q160 152 165 145 L165 140 Q100 135 35 140 Z" fill="#FFFFFF"/>
+          <ellipse cx="100" cy="145" rx="65" ry="8" fill="#ECE1D4"/>
+        </g>
+        
+        <!-- Piso Medio (Piso 2) -->
+        <g class="tier-2">
+          <path d="M50 100 C50 100 50 140 50 140 C50 144 72 148 100 148 C128 148 150 144 150 140 C150 140 150 100 150 100 Z" fill="#F0DFCE"/>
+          <!-- Detalle Rosa / Cobertura Piso 2 -->
+          <path d="M50 100 Q62 110 75 100 Q88 110 100 100 Q112 110 125 100 Q138 110 150 100 L150 96 Q100 92 50 96 Z" fill="#F7E2E2"/>
+          <ellipse cx="100" cy="100" rx="50" ry="7" fill="#E4CEBA"/>
+        </g>
+        
+        <!-- Piso Superior (Piso 3) -->
+        <g class="tier-3">
+          <path d="M65 60 C65 60 65 95 65 95 C65 98 80 102 100 102 C120 102 135 98 135 95 C135 95 135 60 135 60 Z" fill="#F4EADF"/>
+          <ellipse cx="100" cy="60" rx="35" ry="5" fill="#FFFFFF"/>
+          <!-- Adornos de crema -->
+          <circle cx="70" cy="60" r="3" fill="#E8B4B8"/>
+          <circle cx="85" cy="62" r="3" fill="#E8B4B8"/>
+          <circle cx="100" cy="63" r="3" fill="#E8B4B8"/>
+          <circle cx="115" cy="62" r="3" fill="#E8B4B8"/>
+          <circle cx="130" cy="60" r="3" fill="#E8B4B8"/>
+        </g>
+        
+        <!-- Vela -->
+        <g class="candle">
+          <rect x="97" y="38" width="6" height="22" rx="2" fill="#D4AF37"/>
+          <line x1="100" y1="38" x2="100" y2="33" stroke="#5A504B" stroke-width="1.5"/>
+        </g>
+        
+        <!-- Llama -->
+        <path class="flame" d="M100 18 C100 18 93 26 97 31 C99 33 101 33 103 31 C107 26 100 18 100 18 Z" fill="#FFB703"/>
+        <path class="flame" d="M100 22 C100 22 96 27 98 30 C99 31 101 31 102 30 C104 27 100 22 100 22 Z" fill="#FB8500"/>
+        
+        <!-- Destellos dorados alrededor -->
+        <path class="sparkle sparkle-1" d="M45 50 L47 55 L52 57 L47 59 L45 64 L43 59 L38 57 L43 55 Z" fill="#D4AF37"/>
+        <path class="sparkle sparkle-2" d="M155 80 L156 83 L159 84 L156 85 L155 88 L154 85 L151 84 L154 83 Z" fill="#D4AF37"/>
+      </svg>
+
+      <!-- Título y Mensaje de Carga -->
+      <h2 class="loader-title">Tortas Mágicas</h2>
+      <div class="loader-status" id="loader-status">Horneando detalles mágicos...</div>
+
+      <!-- Barra de Progreso -->
+      <div class="progress-bar-container">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+      <div class="progress-number" id="progress-number">0%</div>
+
+    </div>
+  </div>
+
+
+  
+
+
+  <!-- ===================================================
+       4. LÓGICA JAVASCRIPT DEL PRELOADER
+       =================================================== -->
+
+  <script>
+  // Usamos 'pageshow' para capturar recargas e historial de navegación
+  window.addEventListener("pageshow", () => {
+    const progressBar = document.getElementById("progress-bar");
+    const progressNumber = document.getElementById("progress-number");
+    const loaderStatus = document.getElementById("loader-status");
+    const preloader = document.getElementById("preloader");
+
+    const paginaDestino = "index.html"; // Tu URL de destino
+
+    const statusMessages = [
+      { pct: 0, text: "Preparando la masa artesanal..." },
+      { pct: 25, text: "Armando capas de sabor..." },
+      { pct: 55, text: "Decorando con delicadeza..." },
+      { pct: 80, text: "Encendiendo la magia..." },
+      { pct: 100, text: "¡Listo! Redirigiendo..." }
+    ];
+
+    // Restablecer valores iniciales siempre al cargar
+    let progress = 0;
+    progressBar.style.width = "0%";
+    progressNumber.textContent = "0%";
+    preloader.classList.remove("preloader-hidden");
+
+    const interval = setInterval(() => {
+      progress += Math.floor(Math.random() * 3) + 1;
+
+      if (progress >= 100) {
+        progress = 100;
+        clearInterval(interval);
+        
+        setTimeout(() => {
+          window.location.href = paginaDestino;
+        }, 600);
+      }
+
+      progressBar.style.width = progress + "%";
+      progressNumber.textContent = progress + "%";
+
+      const currentMsg = statusMessages.reduce((prev, curr) => {
+        return progress >= curr.pct ? curr : prev;
+      });
+      loaderStatus.textContent = currentMsg.text;
+
+    }, 100);
+  });
+</script>
+
+
+</body>
+</html>
